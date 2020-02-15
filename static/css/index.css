@@ -1,15 +1,53 @@
 body {
     background-image: linear-gradient(to right top, #845EC2, #0089BA, #008E9B, #008F7A);
     height: 100vh;
+    color: white;
+    font-family: 'Roboto Mono', sans-serif, monospace;
 }
 
 .navbar-custom .navbar-brand, 
-.navbar-custom .navbar-text{ 
+.navbar-custom .navbar-text,
+.navbar-custom a{ 
     color: white;
-    font-family: 'Roboto', sans-serif, monospace;
+    font-family: 'Roboto Mono', sans-serif, monospace;
 } 
 
-a {
-    color: white;
-    font-family: 'Roboto', sans-serif, monospace;
+.navbar-custom a:hover {
+    border-bottom: solid #845EC2 1px;
 }
+
+.container {
+    height: 500px;
+    background-color: #845EC2;
+}
+
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 90%;
+    background: #f1f1f1;
+  }
+  
+  /* Style the submit button */
+  form.example button {
+    float: left;
+    padding: 10px;
+    background: transparent;
+    color: white;
+    font-size: 17px;
+    border: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
