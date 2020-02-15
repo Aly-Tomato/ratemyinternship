@@ -1,0 +1,22 @@
+body{
+    background-image: linear-gradient(to right top, #845EC2, #0089BA, #008E9B, #008F7A);
+    height: 100vh;
+}
+
+.container{
+    display: grid;
+}
+
+.box1{
+    background-color: #845EC2;
+    color: white;
+    height: 100px;
+    margin: 10px;
+}
+
+.box.box2{
+    background-color: white;
+    color: white;
+    height: 100px;
+    margin: 10px;
+}
