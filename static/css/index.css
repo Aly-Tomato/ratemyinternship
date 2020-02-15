@@ -1,4 +1,15 @@
-body{
+body {
     background-image: linear-gradient(to right top, #845EC2, #0089BA, #008E9B, #008F7A);
     height: 100vh;
+}
+
+.navbar-custom .navbar-brand, 
+.navbar-custom .navbar-text{ 
+    color: white;
+    font-family: 'Roboto', sans-serif, monospace;
+} 
+
+a {
+    color: white;
+    font-family: 'Roboto', sans-serif, monospace;
 }
