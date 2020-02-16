@@ -52,6 +52,7 @@ form.example button {
   font-size: 17px;
   border: none; /* Prevent double borders */
   cursor: pointer;
+  width: 5%;
 }
 
 form.example button:hover {
@@ -77,4 +78,11 @@ form.example::after {
 #container-2 {
     height: 400px;
     margin-bottom:20px;
+    padding-top:20px;
+  }
+
+  .card-custom {
+      border-radius: 12px;
+      background-color: RGBA(255, 255, 255, .1);
+      height: 95%;
   }
