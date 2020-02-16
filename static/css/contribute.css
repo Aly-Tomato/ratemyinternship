@@ -10,15 +10,21 @@ section{
 }
 
 .container{
-    margin: 30px auto;
+    margin: 25px auto;
     border-radius: 12pt;
-    padding: 25px;
+    padding: 15px;
     width: 65%;
     background-color: rgba(255,255,255,.1)
 }
 
+.container.container-inner{
+    padding: 30px;
+}
+
 form{
     color: white;
+    width: 85%;
+    margin: 0 auto;
 
 }
 
@@ -28,6 +34,11 @@ header{
 
 #reset{
     background-color: #845EC2;
+    border: none;
+}
+#submit{
+    background-color: #845EC2;
+    border: none;
 }
 
 label{
@@ -35,8 +46,6 @@ label{
 }
 
 .general_info{
-    width: 85%;
-    margin: 0 auto;
 }
 
 .form-group.row{

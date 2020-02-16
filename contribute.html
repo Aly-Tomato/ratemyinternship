@@ -7,8 +7,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"/>
 </head>
 <body>
-<section class="company-details"></section>
-    <div class="container">
+<div class="container">
     <header>
         <div class="row justify-content-center">
             <h1> Thank you!</h1>
@@ -18,8 +17,8 @@
         </div>
     </header>
 
-        <div class="container">
-        <form class="general_info">
+    <form>
+        <div class="container container-inner">
             <div class="form-group">
                 <label for="company">Company Name</label>
                 <input type="text" id="company" class="form-control" placeholder="Company Name">
@@ -69,26 +68,12 @@
                         <input type="text" class="form-control" aria-label="Text input with checkbox">
                     </div>
                 </div>
-
             </div>
             <div class="form-group">
                 <label for="descr">Please provide a brief description of the work completed in this internship.</label>
                 <textarea class="form-control" rows="6" id="descr"></textarea>
             </div>
-            <div class="col-sm-2">
-                <label for="reset">
-                    <button class="btn btn-secondary" type="reset" id="reset" value="Reset" onlick="reset_form()">
-                        Reset
-                    </button>
-                </label>
-            </div>
-        </form>
         </div>
-</div>
-</section>
-
-<section class="company-ratings">
-    <div class="container">
     <header>
         <div class="row justify-content-center">
             <h1>Ratings</h1>
@@ -99,7 +84,6 @@
     </header>
 
     <div class="container">
-    <form class="ratings">
         <!--Leadership Ratings -->
         <div class="form-group row">
             <div class="col-sm-4">
@@ -188,10 +172,54 @@
                     <label class="form-check-label" for="flex5">5</label>
                 </div>
             </div>
-    </form>
+        </div>
+
+        <!-- Culter Ratings -->
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <label>Company Culture:</label>
+                <small class="form-text">Did the company respect different cultures and are they an example of a diverse and inclusive place to work?</small>
+            </div>
+            <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="culture1" value="1" name="culture">
+                    <label class="form-check-label" for="culture1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="culture2" value="2" name="culture">
+                    <label class="form-check-label" for="culture2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="culture3" value="3" name="culture">
+                    <label class="form-check-label" for="culture3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="culture4" value="4" name="culture">
+                    <label class="form-check-label" for="culture4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="culture5" value="5" name="culture">
+                    <label class="form-check-label" for="culture5">5</label>
+                </div>
+            </div>
+        </div>
+    </div> <!-- close container -->
+    <div class="form-group row">
+        <div class="col-4">
+            <label for="submit">
+            <button class="btn btn-primary" type="submit" id="submit" value="Submit" onclick="submit_form()">
+                Submit
+            </button>
+            </label>
+            <label for="reset">
+                <button class="btn btn-secondary" type="reset" id="reset" value="Reset" onlick="reset_form()">
+                    Reset
+                </button>
+            </label>
+        </div>
     </div>
+    </form>
 </div>
-</section>
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
