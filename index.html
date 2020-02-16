@@ -1,10 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/css/index.css" />
+    <meta charset="UTF-8" />
+    <title>Rate My Internship</title>
+  </head>
+  <body>
+    <!--  Get page with URL and json box -->
+    <!-- Navbar with Home, about, documentation, contribute(rate an internship)  -->
+    <nav class="navbar navbar-expand-lg navbar-custom" id="navbar-custom">
+      <a class="navbar-brand" href="#">RATE MY INTERNSHIP</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">DOCUMENTATION</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contribute.html">ADD A REVIEW</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <br />
+      <h2>Try it out!</h2>
+      <form class="example" action="action_page.php">
+        <input type="text" placeholder="Search.." name="search" />
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+      <p>
+        Need a hint? Try: <a href="#">Intel</a>
+        <a href="#">Software Engineer</a>
+      </p>
+      <label for="response">Response:</label>
+      <br />
+      <input
+        type="text"
+        id="response"
+        name="response"
+        value="Placeholder"
+        readonly
+      />
+    </div>
+    <br />
+    <div class="container" id="container-2">
+      <div class="card text-white card-custom" style="max-width: 18rem;">
+        <div class="card-header">ABOUT</div>
+        <div class="card-body">
+          <h5 class="card-title">What is this?</h5>
+          <p class="card-text">
+            Portland's greatest source for reviews on internships and the companies that host them.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
