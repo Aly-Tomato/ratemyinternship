@@ -52,3 +52,13 @@ label{
     padding-top:20px;
 }
 
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text,
+.navbar-custom a {
+    color: white;
+    font-family: "Roboto Mono", sans-serif, monospace;
+}
+
+.navbar-custom a:hover {
+    border-bottom: solid #845ec2 1px;
+}
