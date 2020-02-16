@@ -4,16 +4,196 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="static/css/contribute.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"/>
 </head>
 <body>
-<div class="container">
-    <div class="box1">box1
-        <div class="box">box</div>
-    </div>
-    <div class="box2">box2
-        <div class="box">box</div>
-    </div>
+<section class="company-details"></section>
+    <div class="container">
+    <header>
+        <div class="row justify-content-center">
+            <h1> Thank you!</h1>
+        </div>
+        <div class="row justify-content-center">
+            <p class="lead">Thank you for adding to our database of internship ratings. Please take the time to fill out the questionnaire below.</p>
+        </div>
+    </header>
 
+        <div class="container">
+        <form class="general_info">
+            <div class="form-group">
+                <label for="company">Company Name</label>
+                <input type="text" id="company" class="form-control" placeholder="Company Name">
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" class="form-control" placeholder="City, St.">
+            </div>
+            <div class="form-group row">
+                <label for="start" class="col-2 col-form-label">Internship Start Date</label>
+                <div class="col-sm-3">
+                    <input type="date" id="start" class="form-control">
+                </div>
+                <label for="end" class="col-2 col-form-label">Internship End Date</label>
+                <div class="col-sm-3">
+                    <input type="date" id="end" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="position">Position</label>
+                <input type="text" id="position" class="form-control" placeholder="Software Engineering Intern">
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2">
+                    <label>Pay Type:</label>
+                </div>
+                <div class="col-sm-8">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="annual" value="Annual" name="paytypes">
+                        <label class="form-check-label" for="annual">Annual</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="hourly" value="Hourly" name="paytypes">
+                        <label class="form-check-label" for="hourly">Hourly</label>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div class="form-group">
+                    <label for="pay">Pay Amount</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <input type="checkbox" aria-label="Checkbox for following text input">
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Text input with checkbox">
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label for="descr">Please provide a brief description of the work completed in this internship.</label>
+                <textarea class="form-control" rows="6" id="descr"></textarea>
+            </div>
+            <div class="col-sm-2">
+                <label for="reset">
+                    <button class="btn btn-secondary" type="reset" id="reset" value="Reset" onlick="reset_form()">
+                        Reset
+                    </button>
+                </label>
+            </div>
+        </form>
+        </div>
 </div>
+</section>
+
+<section class="company-ratings">
+    <div class="container">
+    <header>
+        <div class="row justify-content-center">
+            <h1>Ratings</h1>
+        </div>
+        <div class="row justify-content-center">
+            <p class="lead">Please rate your internship experiences below. 1 being poor and 5 being excellent!</p>
+        </div>
+    </header>
+
+    <div class="container">
+    <form class="ratings">
+        <!--Leadership Ratings -->
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <label>Leadership:</label>
+                <small class="form-text">Explain this</small>
+            </div>
+            <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="leadership1" value="1" name="leadership">
+                    <label class="form-check-label" for="leadership1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="leadership2" value="2" name="leadership">
+                    <label class="form-check-label" for="leadership2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="leadership3" value="3" name="leadership">
+                    <label class="form-check-label" for="leadership3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="leadership4" value="4" name="leadership">
+                    <label class="form-check-label" for="leadership4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="leadership5" value="5" name="leadership">
+                    <label class="form-check-label" for="leadership4">5</label>
+                </div>
+            </div>
+        </div>
+
+        <!--Team Communication Ratings -->
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <label>Team Communication:</label>
+                <small class="form-text">Did your team communicate well and regularly using tools other than email?</small>
+            </div>
+            <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="communication1" value="1" name="communication">
+                    <label class="form-check-label" for="communication1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="communication2" value="2" name="communication">
+                    <label class="form-check-label" for="communication2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="communication3" value="3" name="communication">
+                    <label class="form-check-label" for="leadership3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="communication4" value="4" name="communication">
+                    <label class="form-check-label" for="communication4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="communication5" value="5" name="communication">
+                    <label class="form-check-label" for="communication5">5</label>
+                </div>
+            </div>
+        </div>
+
+        <!--Flexibility Ratings -->
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <label>Flexibity in Schedule:</label>
+                <small class="form-text">Was your schedule flexbile to account for classes, office hours and other student activites?</small>
+            </div>
+            <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="flex1" value="1" name="flexible">
+                    <label class="form-check-label" for="flex1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="flex2" value="2" name="flexible">
+                    <label class="form-check-label" for="flex2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="flex3" value="3" name="flexible">
+                    <label class="form-check-label" for="flex3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="flex4" value="4" name="flexible">
+                    <label class="form-check-label" for="flex4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="flex5" value="5" name="flexible">
+                    <label class="form-check-label" for="flex5">5</label>
+                </div>
+            </div>
+    </form>
+    </div>
+</div>
+</section>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>
