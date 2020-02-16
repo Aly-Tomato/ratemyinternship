@@ -48,33 +48,51 @@
 
     <form>
         <div class="container container-inner">
-            <div class="form-group">
-                <label for="company">Company Name</label>
-                <input type="text" id="company" class="form-control" placeholder="Company Name">
-            </div>
-            <div class="form-group">
-                <label for="location">Location</label>
-                <input type="text" id="location" class="form-control" placeholder="City, St.">
+            <div class="form-group row">
+                <div class="col-3">
+                    <label for="company">Company Name</label>
+                </div>
+                <div class="col-9">
+                    <input type="text" id="company" class="form-control" placeholder="Company Name">
+                </div>
             </div>
             <div class="form-group row">
-                <label for="start" class="col-2 col-form-label">Internship Start Date</label>
-                <div class="col-sm-3">
+                <div class="col-3">
+                    <label for="location">Location</label>
+                </div>
+                <div class="col-9">
+                    <input type="text" id="location" class="form-control" placeholder="City, St.">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label for="start" id="startlabel" class="col-form-label">Start Date</label>
+                </div>
+                <div class="col-5">
                     <input type="date" id="start" class="form-control">
                 </div>
-                <label for="end" class="col-2 col-form-label">Internship End Date</label>
-                <div class="col-sm-3">
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label for="end" id="endlabel" class="col-form-label">End Date</label>
+                </div>
+                <div class="col-5">
                     <input type="date" id="end" class="form-control">
                 </div>
             </div>
-            <div class="form-group">
-                <label for="position">Position</label>
-                <input type="text" id="position" class="form-control" placeholder="Software Engineering Intern">
+            <div class="form-group row">
+                <div class="col-3">
+                    <label for="position">Position</label>
+                </div>
+                <div class="col-9">
+                    <input type="text" id="position" class="form-control" placeholder="Software Engineering Intern">
+                </div>
             </div>
             <div class="form-group row">
-                <div class="col-sm-2">
+                <div class="col-3">
                     <label>Pay Type:</label>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-9">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" id="annual" value="Annual" name="paytypes">
                         <label class="form-check-label" for="annual">Annual</label>
@@ -85,22 +103,24 @@
                     </div>
                 </div>
             </div>
-            <div class="dropdown">
-                <div class="form-group">
+            <!-- TODO: add conditional logic to determine if Pay Amount should be in the form of annual or hourly-->
+            <div class="form-group row">
+                <div class="col-3">
                     <label for="pay">Pay Amount</label>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <input type="radio" aria-label="Checkbox for following text input">
-                            </div>
-                        </div>
-                        <input type="text" class="form-control" aria-label="Text input with radio">
-                    </div>
+                </div>
+                <div class="col-5">
+                    <select class="form-control" id="pay">
+                        <option>$20,000 - $35,000</option>
+                        <option>$35,000 - $50,000</option>
+                        <option>$50,000 - $65,000</option>
+                        <option>$65,000 - $80,000</option>
+                        <option>$80,00+</option>
+                    </select>
                 </div>
             </div>
             <div class="form-group">
-                <label for="descr">Please provide a brief description of the work completed in this internship.</label>
-                <textarea class="form-control" rows="6" id="descr"></textarea>
+                <label for="overview_descr">Please provide a brief description of the work completed in this internship.</label>
+                <textarea class="form-control" rows="6" id="overview_descr"></textarea>
             </div>
         </div>
     <header>
@@ -113,13 +133,45 @@
     </header>
 
     <div class="container">
+
+        <!-- Overall Rating -->
+        <div class="form-group row">
+            <div class="col-5">
+                <label>Overall Experience:</label>
+                <small class="form-text">Please rate your overall experience</small>
+            </div>
+            <div class="col-7">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="overall1" value="1" name="overall">
+                    <label class="form-check-label" for="overall1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="overall2" value="2" name="overall">
+                    <label class="form-check-label" for="overall2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="overall3" value="3" name="overall">
+                    <label class="form-check-label" for="overall3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="overall4" value="4" name="overall">
+                    <label class="form-check-label" for="overall4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="overall5" value="5" name="overall">
+                    <label class="form-check-label" for="overall5">5</label>
+                </div>
+            </div>
+        </div>
+
         <!--Leadership Ratings -->
         <div class="form-group row">
-            <div class="col-sm-4">
+            <div class="col-5">
                 <label>Leadership:</label>
-                <small class="form-text">Explain this</small>
+                <small class="form-text">Rate how invested management was in your success? This can include your
+                immediate superior, your superior's superior, and/or CEO.</small>
             </div>
-            <div class="col-sm-8">
+            <div class="col-7">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" id="leadership1" value="1" name="leadership">
                     <label class="form-check-label" for="leadership1">1</label>
@@ -145,11 +197,11 @@
 
         <!--Team Communication Ratings -->
         <div class="form-group row">
-            <div class="col-sm-4">
+            <div class="col-5">
                 <label>Team Communication:</label>
-                <small class="form-text">Did your team communicate well and regularly using tools other than email?</small>
+                <small class="form-text">Rate how well your team communicated. Was communication regular and used tools other than email?</small>
             </div>
-            <div class="col-sm-8">
+            <div class="col-7">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" id="communication1" value="1" name="communication">
                     <label class="form-check-label" for="communication1">1</label>
@@ -175,11 +227,11 @@
 
         <!--Flexibility Ratings -->
         <div class="form-group row">
-            <div class="col-sm-4">
+            <div class="col-5">
                 <label>Flexibity in Schedule:</label>
-                <small class="form-text">Was your schedule flexbile to account for classes, office hours and other student activites?</small>
+                <small class="form-text">Rate how flexible your schedule was to account for classes, office hours and other student activites.</small>
             </div>
-            <div class="col-sm-8">
+            <div class="col-7">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" id="flex1" value="1" name="flexible">
                     <label class="form-check-label" for="flex1">1</label>
@@ -203,13 +255,14 @@
             </div>
         </div>
 
-        <!-- Culter Ratings -->
+        <!-- Culture Ratings -->
         <div class="form-group row">
-            <div class="col-sm-4">
+            <div class="col-5">
                 <label>Company Culture:</label>
-                <small class="form-text">Did the company respect different cultures and are they an example of a diverse and inclusive place to work?</small>
+                <small class="form-text">Rate how well the company respected different cultures.
+                    A rating of 5 would mean that they are a shining example of a diverse and inclusive place.</small>
             </div>
-            <div class="col-sm-8">
+            <div class="col-7">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" id="culture1" value="1" name="culture">
                     <label class="form-check-label" for="culture1">1</label>
@@ -232,6 +285,72 @@
                 </div>
             </div>
         </div>
+
+        <!-- Team Recommendation -->
+        <div class="form-group row">
+            <div class="col-5">
+                <label>Internship Recommendation:</label>
+                <small class="form-text">How likely are you to recommend this specific internship with this specific team?</small>
+            </div>
+            <div class="col-7">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="internrec1" value="1" name="internrec">
+                    <label class="form-check-label" for="internrec1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="internrec2" value="2" name="internrec">
+                    <label class="form-check-label" for="internrec2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="internrec3" value="3" name="internrec">
+                    <label class="form-check-label" for="internrec3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="internrec4" value="4" name="internrec">
+                    <label class="form-check-label" for="internrec4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="internrec5" value="5" name="internrec">
+                    <label class="form-check-label" for="internrec5">5</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Company Recommendation -->
+        <div class="form-group row">
+            <div class="col-5">
+                <label>Company Recommendation:</label>
+                <small class="form-text">How likely are you to recommend interning at this company?</small>
+            </div>
+            <div class="col-7">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="comprec1" value="1" name="comprec">
+                    <label class="form-check-label" for="comprec1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="comprec2" value="2" name="comprec">
+                    <label class="form-check-label" for="comprec2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="comprec3" value="3" name="comprec">
+                    <label class="form-check-label" for="comprec3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="comprec4" value="4" name="comprec">
+                    <label class="form-check-label" for="comprec4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="comprec5" value="5" name="comprec">
+                    <label class="form-check-label" for="comprec5">5</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="ratings_descr">Please use this space to explain any reasoning to your ratings if applicable.</label>
+            <textarea class="form-control" rows="6" id="ratings_descr"></textarea>
+        </div>
+
     </div> <!-- close container -->
     <div class="form-group row">
         <div class="col-4">

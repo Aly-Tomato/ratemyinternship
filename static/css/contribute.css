@@ -41,8 +41,9 @@ header{
     border: none;
 }
 
-label{
+label, #startlabel, #endlabel{
     font-size: 1.2em;
+    text-transform: uppercase;
 }
 
 .general_info{
