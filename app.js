@@ -1,18 +1,25 @@
 const express = require('express');
 const app = express();
 
-app.use(express.static('public'));
-app.use(express.static('static/css'));
-app.use(express.static('static/js'));
+app.use('views/', express.static('views'));
+app.use('/static', express.static('static'));
+var documentation = require('./routes/documentation');
+var addReview = require('./routes/addReview');
+var admin = require('./routes/admin');
+
+module.exports = app;
 
 app.get('/', (req, res) =>{
     res.status(200);
-    res.sendFile('index.html');
+    res.sendFile('index.html', {root: 'views/'});
 });
 
-app.get('/add', (req, res) =>{
-    res.status(200);
-    res.sendFile('public/contribute.html');
-});
+// documentation route
+app.get('/documentation', documentation.list);
+
+// addReview route
+app.get('/addReview', addReview.add);
+
+// admin route
 
 app.listen(5000);
