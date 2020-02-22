@@ -9,6 +9,7 @@ var admin = require('./routes/admin');
 
 module.exports = app;
 
+// initial index route
 app.get('/', (req, res) =>{
     res.status(200);
     res.sendFile('index.html', {root: 'views/'});
@@ -21,5 +22,6 @@ app.get('/documentation', documentation.list);
 app.get('/addReview', addReview.add);
 
 // admin route
+app.get('/admin', admin.auth);
 
 app.listen(5000);

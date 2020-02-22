@@ -1,0 +1,25 @@
+body {
+    background-image: linear-gradient(
+            to right top,
+            #845ec2,
+            #0089ba,
+            #008e9b,
+            #008f7a
+    );
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    font-family: "Roboto Mono", sans-serif, monospace;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text,
+.navbar-custom a {
+    color: white;
+    font-family: "Roboto Mono", sans-serif, monospace;
+}
+
+.navbar-custom a:hover {
+    border-bottom: solid #845ec2 1px;
+}
