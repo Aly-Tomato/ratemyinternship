@@ -66,6 +66,14 @@
             </div>
             <div class="form-group row">
                 <div class="col-3">
+                    <label for="position">Position</label>
+                </div>
+                <div class="col-9">
+                    <input type="text" id="position" class="form-control" placeholder="Software Engineering Intern">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
                     <label for="start" id="startlabel" class="col-form-label">Start Date</label>
                 </div>
                 <div class="col-5">
@@ -82,10 +90,21 @@
             </div>
             <div class="form-group row">
                 <div class="col-3">
-                    <label for="position">Position</label>
+                    <label>Internship Type:</label>
                 </div>
                 <div class="col-9">
-                    <input type="text" id="position" class="form-control" placeholder="Software Engineering Intern">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="mecop" value="mecop" name="interntypes">
+                        <label class="form-check-label" for="mecop">MECOP</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="pcep" value="pcep" name="interntypes">
+                        <label class="form-check-label" for="pcep">PCEP</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="other" value="pcep" name="interntypes">
+                        <label class="form-check-label" for="other">Other</label>
+                    </div>
                 </div>
             </div>
             <div class="form-group row">
