@@ -14,11 +14,15 @@ section{
     padding: 30px;
 }
 
+.container.card{
+    width: 35%;
+    background-color: rgba(255,255,255,.1)
+}
+
 form{
     color: white;
     width: 85%;
     margin: 0 auto;
-
 }
 
 header{
