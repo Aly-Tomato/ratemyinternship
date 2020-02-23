@@ -15,6 +15,7 @@
     />
     <link rel="stylesheet" type="text/css" href="../static/css/base.css"/>
     <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
+    <script typescript="text/javascript" src="../static/js/index.js"></script>
     <meta charset="UTF-8" />
     <title>Rate My Internship</title>
   </head>
@@ -58,13 +59,28 @@
       </p>
       <label for="response">Response:</label>
       <br />
-      <input
-        type="text"
-        id="response"
-        name="response"
-        value="Placeholder"
-        readonly
-      />
+      <textarea id="response" name="response" readonly>
+{
+          company: "Intel",
+          location: "Portland, OR",
+          date: [February 12, 2018, January 1, 2019],
+          internshiptype: "other"
+          position: "Software Engineer",
+          paytype: "hourly",
+          pay: "20,000 - 35,000"
+          workdescription: "Add requested features including GPS tracking."
+          rating: [
+              overall: "5",
+              leadership: "3",
+              teamcommunication: "1",
+              companyculture: "4",
+              internshiprecommendation: "3",
+              companyrecommendation: "5",
+              reasoning: "They took care of us, but the team I worked with had poor communication skills and were unwilling to adapt."
+          ]
+          
+}
+      </textarea>
     </div>
     <br />
     <div class="container" id="container-2">
