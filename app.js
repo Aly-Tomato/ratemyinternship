@@ -15,13 +15,15 @@ app.get('/', (req, res) =>{
     res.sendFile('index.html', {root: 'views/'});
 });
 
-// documentation route
+// documentation routes
 app.get('/documentation', documentation.list);
 
-// addReview route
-app.get('/addReview', addReview.add);
+// addReview routes
+app.get('/addReview', addReview.form);
+app.post('/addReview', addReview.submit);
 
-// admin route
-app.get('/admin', admin.auth);
+// admin routes
+app.get('/admin', admin.login);
+app.post('/admin', admin.auth);
 
 app.listen(5000);

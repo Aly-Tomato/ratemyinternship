@@ -18,6 +18,10 @@ else{
 elem.innerHTML = options;
 }
 
+function submit(){
+
+}
+
 document.getElementById('annual').addEventListener("click", changepay);
 document.getElementById('hourly').addEventListener("click", changepay);
 
