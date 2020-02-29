@@ -3,6 +3,8 @@ const app = express();
 
 app.use('views/', express.static('views'));
 app.use('/static', express.static('static'));
+app.use(express.urlencoded({'extended': false}));
+
 var documentation = require('./routes/documentation');
 var addReview = require('./routes/addReview');
 var admin = require('./routes/admin');
@@ -20,7 +22,7 @@ app.get('/documentation', documentation.list);
 
 // addReview routes
 app.get('/addReview', addReview.form);
-app.post('/addReview', addReview.submit);
+app.post('/submit', addReview.submitReview);
 
 // admin routes
 app.get('/admin', admin.login);
