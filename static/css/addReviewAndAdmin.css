@@ -1,6 +1,9 @@
 section{
     height:100%;
 }
+h1{
+    color: white;
+}
 
 .container{
     margin: 25px auto;

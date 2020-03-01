@@ -25,7 +25,11 @@ exports.submitReview = function(req,res){
             res.send("Error: Unable to connect to database. Issue has been sent to admins");
         }
 
-        res.send(`User added with ID: ${res.insertId}`);
+        res.redirect('/thankyou');
     });
 
+};
+
+exports.thankyou = function(req, res){
+    res.sendFile('thankyou.html', {root: 'views/'});
 };

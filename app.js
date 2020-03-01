@@ -25,6 +25,7 @@ app.get('/documentation', documentation.list);
 // addReview routes
 app.get('/addReview', addReview.form);
 app.post('/submit', addReview.submitReview);
+app.get('/thankyou', addReview.thankyou);
 
 // admin routes
 app.get('/admin', admin.login);
