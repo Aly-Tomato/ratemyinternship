@@ -17,9 +17,7 @@ app.get('/', (req, res) =>{
     res.status(200);
     res.sendFile('index.html', {root: 'views/'});
 });
-
 app.post('/getURL', index.getURL);
-
 
 // documentation routes
 app.get('/documentation', documentation.list);
@@ -33,4 +31,3 @@ app.get('/admin', admin.login);
 app.post('/admin', admin.auth);
 
 app.listen(5000);
-console.log(`Listening on localhost:5000`);
