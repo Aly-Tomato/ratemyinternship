@@ -12,7 +12,8 @@ exports.getURL = function(req, res) {
         port: 5432
     });
 
-    var rows = pool.query("SELECT* FROM reviews", (err, res) => {
+    var rows = pool.query("SELECT* FROM views", (err, res) => {
+        console.log(res.rows);
         if(err) throw err;
         return res.rows;
     });
@@ -26,5 +27,4 @@ exports.getURL = function(req, res) {
     });
 
    res.send();
-
 };

@@ -32,3 +32,4 @@ app.get('/admin', admin.login);
 app.post('/admin', admin.auth);
 
 app.listen(5000);
+console.log(`Listening on localhost:5000`);
