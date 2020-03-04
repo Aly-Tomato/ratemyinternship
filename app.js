@@ -32,7 +32,7 @@ app.get('/admin', admin.login);
 app.post('/admin', admin.auth);
 
 
-app.get('/all', (req, res) => {
+app.get('/api/all', (req, res) => {
     const { Pool } = require("pg");
     const pool = new Pool();
 
@@ -40,7 +40,9 @@ app.get('/all', (req, res) => {
         if(err) throw err;
         res.send(result.rows);
     });
-})
+});
+
+app.get('/')
 
 app.listen(5000);
 console.log(`Listening on localhost:5000`);

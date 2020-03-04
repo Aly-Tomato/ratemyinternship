@@ -1,6 +1,6 @@
 $(document).ready(() => {
     $('#submitButton').click(() => {
-        const requestURL = $('#searchBox').val();
+        const requestURL = 'api/' + $('#searchBox').val();
         console.log('making ajax request to:', requestURL);
         $.ajax({
             url: requestURL,
@@ -12,4 +12,4 @@ $(document).ready(() => {
             }
         });
     })
-})
+});
