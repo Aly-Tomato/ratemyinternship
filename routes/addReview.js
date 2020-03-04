@@ -9,6 +9,7 @@ exports.submitReview = function(req,res){
 
     var objects_list = [];
     Object.keys(req.body).forEach((key, val) =>{
+        console.log(req.body[key]);
         objects_list.push(req.body[key]);
     });
     objects_list[3] = new Date(objects_list[3]);

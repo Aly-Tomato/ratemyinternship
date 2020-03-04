@@ -5,6 +5,9 @@ app.use('views/', express.static('views'));
 app.use('/static', express.static('static'));
 app.use(express.urlencoded({'extended': false}));
 
+const { Pool } = require("pg");
+const pool = new Pool();
+
 var documentation = require('./routes/documentation');
 var addReview = require('./routes/addReview');
 var admin = require('./routes/admin');
@@ -31,18 +34,28 @@ app.get('/thankyou', addReview.thankyou);
 app.get('/admin', admin.login);
 app.post('/admin', admin.auth);
 
-
-app.get('/api/all', (req, res) => {
-    const { Pool } = require("pg");
-    const pool = new Pool();
-
-    pool.query("SELECT* FROM reviews", (err, result) => {
+app.get('/api/:field/:value', (req, res) =>{
+    var query = `SELECT * FROM reviews WHERE ${req.params.field}='${req.params.value}'`;
+    console.log(query);
+    pool.query(`SELECT * FROM reviews WHERE ${req.params.field}='${req.params.value}'`, (err, result) => {
         if(err) throw err;
         res.send(result.rows);
     });
 });
 
-app.get('/')
+app.get('/api/all/:field', (req, res) =>{
+    pool.query(`SELECT DISTINCT(${req.params.field}) FROM reviews`, (err, result) => {
+        if(err) throw err;
+        res.send(result.rows);
+    });
+});
+
+app.get('/api/all', (req, res) => {
+    pool.query("SELECT* FROM reviews", (err, result) => {
+        if(err) throw err;
+        res.send(result.rows);
+    });
+});
 
 app.listen(5000);
 console.log(`Listening on localhost:5000`);
