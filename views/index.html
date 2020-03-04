@@ -52,37 +52,20 @@
     <div class="container">
       <br />
       <h2>Try it out!</h2>
-      <!-- <form class="example" action="/getURL" method="post"> -->
-        <input type="text" placeholder="Search.." id="searchBox" />
-        <button type="submit" id="submitButton"><i class="fa fa-search"></i></button>
-      <!-- </form> -->
+        <label for="searchBox"></label>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="prepend">https://ratemyinternship.com/api/</span>
+            </div>
+            <input class="form-control" type="text" placeholder="all/" id="searchBox" />
+            <button type="submit" id="submitButton"><i class="fa fa-search"></i></button>
+        </div>
       <p>
-        Need a hint? Try: <a href="#">Intel</a>
-        <a href="#">Software Engineer</a>
+        Need a hint? Try: <a href="/all">all/</a>
       </p>
       <label for="response">Response:</label>
       <br />
       <textarea class="response" id="response" name="response" readonly>
-{
-          company: "Intel",
-          location: "Portland, OR",
-          date: [February 12, 2018, January 1, 2019],
-          internshiptype: "other"
-          position: "Software Engineer",
-          paytype: "hourly",
-          pay: "20,000 - 35,000"
-          workdescription: "Add requested features including GPS tracking."
-          rating: [
-              overall: "5",
-              leadership: "3",
-              teamcommunication: "1",
-              companyculture: "4",
-              internshiprecommendation: "3",
-              companyrecommendation: "5",
-              reasoning: "They took care of us, but the team I worked with had poor communication skills and were unwilling to adapt."
-          ]
-
-}
       </textarea>
     </div>
     <br />

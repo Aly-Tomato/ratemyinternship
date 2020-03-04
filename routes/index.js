@@ -1,8 +1,4 @@
 exports.getURL = function(req, res) {
-    const fs = require('fs');
-    const jsdom = require('jsdom');
-    const {JSDOM} = jsdom;
-
     const { Pool } = require("pg");
     const pool = new Pool();
 
@@ -11,6 +7,7 @@ exports.getURL = function(req, res) {
         return res.rows;
     });
 };
+
 // app.get('/test', (req, res) => {
 //     // const allUsers = Object.keys(testDataBase);
 //     // res.send(allUsers);

@@ -1,6 +1,6 @@
 $(document).ready(() => {
     $('#submitButton').click(() => {
-        const requestURL = 'all/' + $('#searchBox').val();
+        const requestURL = $('#searchBox').val();
         console.log('making ajax request to:', requestURL);
         $.ajax({
             url: requestURL,
