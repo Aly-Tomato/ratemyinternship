@@ -34,13 +34,7 @@ app.post('/admin', admin.auth);
 
 app.get('/all', (req, res) => {
     const { Pool } = require("pg");
-    const pool = new Pool({
-        user: "atamayo",
-        host: "db.cecs.pdx.edu",
-        database: "atamayo",
-        password: "y4@z4qxgMw",
-        port: 5432
-    });
+    const pool = new Pool();
 
     pool.query("SELECT* FROM reviews", (err, result) => {
         if(err) throw err;
