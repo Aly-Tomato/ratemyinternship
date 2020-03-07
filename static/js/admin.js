@@ -23,7 +23,7 @@ function generate_table(data){
                     <input class="form-check" type="checkbox" id=${data[i].uid} value="${data[i].uid}" name="to_delete"> 
                 </td>
                 <th scope="row">${data[i].uid}</th>
-                <td class="company">${data[i].company}</td>
+                <td>${data[i].company}</td>
                 <td>${data[i].location}</td>
                 <td>${data[i].position}</td>
                 <td>${data[i].start}</td>
@@ -40,3 +40,10 @@ function generate_table(data){
     return html;
 }
 
+var input = document.getElementById("searchBox");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("submitButton").click();
+  }
+});

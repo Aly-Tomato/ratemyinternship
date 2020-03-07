@@ -1,66 +1,72 @@
-section{
-    height:100%;
+section {
+  height: 100%;
 }
-h1{
-    color: white;
-}
-
-.container{
-    margin: 25px auto;
-    border-radius: 12pt;
-    padding: 15px;
-    background-color: rgba(255,255,255,.1)
+h1 {
+  color: white;
 }
 
-table{
-    background-color: rgba(255,255,255,.2);
-}
-#admin-table{
-    width: 100%;
-}
-
-th{
-    white-space: nowrap;
+.container {
+  margin: 25px auto;
+  border-radius: 12pt;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.container.card{
-    width: 35%;
-    background-color: rgba(255,255,255,.1);
-    box-shadow: 5px 40px 40px 15px rgba(0, 0, 0, .3);
+table {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+#admin-table {
+  table-layout: fixed;
+  width: 100%;
 }
 
-#admin-form{
-    width: 100%;
+td {
+  overflow: hidden;
 }
 
-form{
-    color: white;
-    margin: 0 auto;
+th {
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-header{
-    color: white;
+.container.card {
+  width: 35%;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 5px 40px 40px 15px rgba(0, 0, 0, 0.3);
 }
 
-#reset{
-    background-color: #845EC2;
-    border: none;
-}
-#submit{
-    background-color: #845EC2;
-    border: none;
+#admin-form {
+  width: 100%;
 }
 
-label, #startlabel, #endlabel{
-    font-size: 1.2em;
-    text-transform: uppercase;
+form {
+  color: white;
+  margin: 0 auto;
 }
 
-.general_info{
+header {
+  color: white;
 }
 
-.form-group.row{
-    padding-top:20px;
+#reset {
+  background-color: #845ec2;
+  border: none;
+}
+#submit {
+  background-color: #845ec2;
+  border: none;
 }
 
+label,
+#startlabel,
+#endlabel {
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
 
+.general_info {
+}
+
+.form-group.row {
+  padding-top: 20px;
+}
