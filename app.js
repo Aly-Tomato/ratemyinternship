@@ -27,24 +27,27 @@ app.get('/documentation', documentation.list);
 
 // addReview routes
 app.get('/addReview', addReview.form);
-app.post('/submit', addReview.submitReview);
+app.post('/submitform', addReview.submitReview);
 app.get('/thankyou', addReview.thankyou);
 
 // admin routes
-app.get('/admin', admin.login);
-app.post('/admin', admin.auth);
+app.get('/admin', admin.auth);
+//app.post('/admin', admin.auth);
 
-app.get('/api/:field/:value', (req, res) =>{
-    var query = `SELECT * FROM reviews WHERE ${req.params.field}='${req.params.value}'`;
-    console.log(query);
-    pool.query(`SELECT * FROM reviews WHERE ${req.params.field}='${req.params.value}'`, (err, result) => {
+app.post('/delete', admin.deleteRows);
+
+// api URLs
+app.get('/api/all/:field', (req, res) =>{
+    pool.query(`SELECT DISTINCT(${req.params.field}) FROM reviews`, (err, result) => {
         if(err) throw err;
         res.send(result.rows);
     });
 });
 
-app.get('/api/all/:field', (req, res) =>{
-    pool.query(`SELECT DISTINCT(${req.params.field}) FROM reviews`, (err, result) => {
+app.get('/api/:field/:value', (req, res) =>{
+    var query = `SELECT * FROM reviews WHERE ${req.params.field}='${req.params.value}'`;
+    console.log(query);
+    pool.query(`SELECT * FROM reviews WHERE ${req.params.field}='${req.params.value}'`, (err, result) => {
         if(err) throw err;
         res.send(result.rows);
     });
@@ -58,4 +61,4 @@ app.get('/api/all', (req, res) => {
 });
 
 app.listen(5000);
-console.log(`Listening on localhost:5000`);
+//console.log(`Listening on localhost:5000`);

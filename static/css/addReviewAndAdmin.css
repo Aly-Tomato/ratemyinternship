@@ -9,12 +9,15 @@ h1{
     margin: 25px auto;
     border-radius: 12pt;
     padding: 15px;
-    width: 65%;
     background-color: rgba(255,255,255,.1)
 }
 
-.container.container-inner{
-    padding: 30px;
+table{
+    background-color: rgba(255,255,255,.2);
+}
+
+th{
+    white-space: nowrap;
 }
 
 .container.card{
@@ -53,4 +56,5 @@ label, #startlabel, #endlabel{
 .form-group.row{
     padding-top:20px;
 }
+
 
