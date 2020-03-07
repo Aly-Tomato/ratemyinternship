@@ -27,39 +27,94 @@ app.get("/documentation", documentation.list);
 
 // addReview routes
 app.get("/addReview", addReview.form);
-app.post("/submit", addReview.submitReview);
+app.post("/submitform", addReview.submitReview);
 app.get("/thankyou", addReview.thankyou);
 
 // admin routes
-app.get("/admin", admin.login);
-app.post("/admin", admin.auth);
+app.get("/admin", admin.auth);
+//app.post('/admin', admin.auth);
 
-app.get("/api/:field/:value", (req, res) => {
-  var query = `SELECT * FROM reviews WHERE ${req.params.field}='${req.params.value}'`;
+app.post("/delete", admin.deleteRows);
+
+// api URLs
+app.get("/api/all/:field", (req, res) => {
+  // check if field was valid
+  var validFields = [
+    "uid",
+    "company",
+    "location",
+    "position",
+    "start",
+    "end",
+    "intern_type",
+    "pay_type",
+    "pay_amount",
+    "work_desc",
+    "overall_rating",
+    "leadership_rating",
+    "communication_rating",
+    "flexibility_rating",
+    "culture_rating",
+    "internship_recommend",
+    "company_recommend",
+    "ratings_desc"
+  ];
+  if (!validFields.includes(req.params.field)) {
+    res.status(500);
+    res.send("Error");
+    return;
+  }
   pool.query(
-    `SELECT * FROM reviews WHERE ${req.params.field}='${req.params.value}'`,
+    `SELECT DISTINCT(${req.params.field}) FROM reviews`,
     (err, result) => {
-      try {
-        if (err) throw err;
-        res.send(result.rows);
-      } catch {
+      if (err) {
         res.status(500);
         res.send("Error");
+      } else {
+        res.status(200);
+        res.send(result.rows);
       }
     }
   );
 });
 
-app.get("/api/all/:field", (req, res) => {
+app.get("/api/:field/:value", (req, res) => {
+  var query = `SELECT * FROM reviews WHERE ${req.params.field}='${req.params.value}'`;
+  // check if field was valid
+  var validFields = [
+    "uid",
+    "company",
+    "location",
+    "position",
+    "start",
+    "end",
+    "intern_type",
+    "pay_type",
+    "pay_amount",
+    "work_desc",
+    "overall_rating",
+    "leadership_rating",
+    "communication_rating",
+    "flexibility_rating",
+    "culture_rating",
+    "internship_recommend",
+    "company_recommend",
+    "ratings_desc"
+  ];
+  if (!validFields.includes(req.params.field)) {
+    res.status(500);
+    res.send("Error");
+    return;
+  }
   pool.query(
-    `SELECT DISTINCT(${req.params.field}) FROM reviews`,
+    `SELECT * FROM reviews WHERE ${req.params.field}='${req.params.value}'`,
     (err, result) => {
-      try {
-        if (err) throw err;
-        res.send(result.rows);
-      } catch {
+      if (err) {
         res.status(500);
         res.send("Error");
+      } else {
+        res.status(200);
+        res.send(result.rows);
       }
     }
   );
@@ -67,15 +122,14 @@ app.get("/api/all/:field", (req, res) => {
 
 app.get("/api/all", (req, res) => {
   pool.query("SELECT* FROM reviews", (err, result) => {
-    try {
-      if (err) throw err;
+    if (err) {
+      res.status(500);
+      res.send("Error");
+    } else {
+      res.status(200);
       res.send(result.rows);
-    } catch {
-        res.status(500);
-        res.send("Error");
     }
   });
 });
 
 app.listen(5000);
-console.log(`Listening on localhost:5000`);
