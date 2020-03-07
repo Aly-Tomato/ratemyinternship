@@ -32,9 +32,8 @@ app.get('/thankyou', addReview.thankyou);
 
 // admin routes
 app.get('/admin', admin.auth);
-//app.post('/admin', admin.auth);
-
 app.post('/delete', admin.deleteRows);
+app.post('/thankyounext', );
 
 // api URLs
 app.get('/api/all/:field', (req, res) =>{

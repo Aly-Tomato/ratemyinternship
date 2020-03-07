@@ -23,3 +23,10 @@ body {
 .navbar-custom a:hover {
     border-bottom: solid #845ec2 1px;
 }
+
+a{
+    color: #845EC2;
+}
+a:hover{
+    color: #008f7a;
+}

@@ -15,6 +15,9 @@ h1{
 table{
     background-color: rgba(255,255,255,.2);
 }
+#admin-table{
+    width: 100%;
+}
 
 th{
     white-space: nowrap;
@@ -26,9 +29,12 @@ th{
     box-shadow: 5px 40px 40px 15px rgba(0, 0, 0, .3);
 }
 
+#admin-form{
+    width: 100%;
+}
+
 form{
     color: white;
-    width: 85%;
     margin: 0 auto;
 }
 
