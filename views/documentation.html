@@ -1,48 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>documentation page</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/base.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"/>
+  <meta charset="UTF-8">
+  <title>documentation page</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/base.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
 </head>
+
 <body>
-<!-- Navbar with Home, about, documentation, contribute(rate an internship)  -->
-<nav class="navbar navbar-expand-lg navbar-custom" id="navbar-custom">
+  <!-- Navbar with Home, about, documentation, contribute(rate an internship)  -->
+  <nav class="navbar navbar-expand-lg navbar-custom" id="navbar-custom">
     <a class="navbar-brand" href="/">RATE MY INTERNSHIP</a>
-    <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-    >
-        <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/documentation">DOCUMENTATION</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/addReview">ADD A REVIEW</a>
-            </li>
-        </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/documentation">DOCUMENTATION</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/addReview">ADD A REVIEW</a>
+        </li>
+      </ul>
     </div>
-</nav>
+  </nav>
+  <h1>DOCUMENTATION</h1>
+  <hr>
+  <h3>Introduction</h3>
+  <a>This documentation is designed to help craft the correct URL needed to recieve the correctly desired JSON object
+    from the rate my internship website.Below will contain example searches and what the table schema is to provide
+    insight on the type of information recieved and how to get it.
+  </a>
+  </br></br>
+  <h3>Current Version</h3>
+  <a>The current version for the API is 1.0.0</a>
+  </br></br>
+  <h3>Authentication</h3>
+  <a>Rate My Internship is an open API at the moment and does not require any authentication to GET the data.</a>
+  </br></br>
+  <h3>Table Schema</h3>
+  </br>
+  <table class="table table-striped table-hover" id="admin-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+      <tr>
+        <td>uid</td>
+        <td>Unique ID of the review</td>
+        <td>Integer</td>
+      </tr>
+      <tr>
+        <td>company</td>
+        <td>Reviewed company's name</td>
+        <td>String</td>
+      </tr>
+      <tr>
+        <td>location</td>
+        <td>Location of the internship</td>
+        <td>String</td>
+      </tr>
+      <tr>
+        <td>position</td>
+        <td>Student's position at the company</td>
+        <td>String</td>
+      </tr>
+      <tr>
+        <td>start</td>
+        <td>Beginning date of the internship</td>
+        <td>Date</td>
+      </tr>
+      <tr>
+        <td>end</td>
+        <td>End date of the internship</td>
+        <td>Date</td>
+      </tr>
+      <tr>
+        <td>intern_type</td>
+        <td>Reviewed company's name</td>
+        <td>String</td>
+      </tr>
+      <tr>
+        <td>pay_type</td>
+        <td>Annual or hourly</td>
+        <td>String</td>
+      </tr>
+      <tr>
+        <td>pay_amount</td>
+        <td>Income level or hourly rate</td>
+        <td>String</td>
+      </tr>
+      <tr>
+        <td>work_desc</td>
+        <td>Description of tasks performed at internship</td>
+        <td>String</td>
+      </tr>
+      <tr>
+        <td>overall_rating</td>
+        <td>Overall experience at the company</td>
+        <td>Integer</td>
+      </tr>
+      <tr>
+        <td>leadership_rating</td>
+        <td>Leadership of the team or mentor</td>
+        <td>Integer</td>
+      </tr>
+      <tr>
+        <td>communication_rating</td>
+        <td>Communication between team members and superiors</td>
+        <td>Integer</td>
+      </tr>
+      <tr>
+        <td>flexibility_rating</td>
+        <td>Flexibility or willingness to accomadate student schedules</td>
+        <td>Integer</td>
+      </tr>
+      <tr>
+        <td>culture_rating</td>
+        <td>Coprorate culture</td>
+        <td>Integer</td>
+      </tr>
+      <tr>
+        <td>internship_recommend</td>
+        <td>Likelihood of recommending the internship to another student</td>
+        <td>integer</td>
+      </tr>
+      <tr>
+        <td>company_recommend</td>
+        <td>Likelihood of recommending the company to another student</td>
+        <td>Integer</td>
+      </tr>
+      <tr>
+        <td>rating_desc</td>
+        <td>Comments on reviewers ratings</td>
+        <td>String</td>
+      </tr>
+    </tbody>
+  </table>
+  </br>
+  <h3>Usage</h3>
+  <hr>
+  <h4>All Entries</h4>
+  <a>On it's own, entering <code>all/</code> in the search bar will return all reviews that are posted to the database.</a>
+</br></br>
+    <h4>Unique List Names</h4>
+    <a>To search for a list of all unique database elements, enter: <code>all/name</code>. This will return all unique
+  elements of that particular field.
+  Example: <code>all/company</code> will return something like:
+  <pre><code>
+  [
+        {
+                "company": "Rhode & Schwarz"
+        },
+        {
+                "company": "Intel Corporation"
+        }
+  ]
+</code></pre>
+  With this result, we only see the list of unique companies, and if there are many of the same company, only one list
+  item for the set will be displayed. To search for a particular review or set of reviews, we instead turn to the
+      <code>name/</code> search. Note: for the admin page, <code>/all/name</code> does not work to edited the database. Since <code>/all/name</code> only returns a list, we cannot edit any entries in this manner(refer to filtering entries).</a>
+</br></br>
+  <h4>Filtering Entries</h4>
+<a>To search for specific entries, we can use design the URL to get all of the desired data. The format for this search is: <code>name/value</code>. The name is the field of data such as company or overall_rating. To view all the names of the potential searches, please refer to the table schema.
+Example: You wanted to find all of the entries for the portland area. You would enter: <code>location/Portland,%20OR</code> (At the moment, all of the searches are case sensitive, so be sure the search will match the result.) This will return:</a>
+<pre><code>[
+        {
+                "uid": 7,
+                "company": "Intel Corporation",
+                "location": "Portland, OR",
+                "position": "Software Engineering Intern",
+                "start": "2020-03-03T08:00:00.000Z",
+                "end": "2020-03-27T07:00:00.000Z",
+                "intern_type": "other",
+                "pay_type": "Annual",
+                "pay_amount": "$20,000 - $35,000",
+                "work_desc": "",
+                "overall_rating": 3,
+                "leadership_rating": 3,
+                "communication_rating": 3,
+                "flexibility_rating": 3,
+                "culture_rating": 3,
+                "internship_recommend": 3,
+                "company_recommend": 3,
+                "ratings_desc": ""
+        }
+]
+ </code> </pre>
+<a> In this instance, there was currently only 1 entry under the Portland, OR search criteria. There can be many ways to use this feature such as <code>overall_rating/5</code> to view all of the review entries with an overall rating of 5.</a>
+    <h3>Libraries</h3>
+    <hr>
+    <h5>Express</h5>
+    <a link href="https://expressjs.com/">https://expressjs.com/</a>
+    <h5>Node-postgres</h5>
+    <a link href="https://expressjs.com/">https://node-postgres.com/</a>
 
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
-</html>
 
-<!-- 
-    Introduction
-    table schema
-    list all different examples and what they are (all/fields shows list of fields)
-    how the filter works
-    syntax
-    admin page where all/whatever doesnt work because it returns a list so use specific searches
- -->
+</html>
