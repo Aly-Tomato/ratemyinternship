@@ -13,9 +13,9 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="../static/css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/base.css" />
     <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
-    
+
     <meta charset="UTF-8" />
     <title>Rate My Internship</title>
   </head>
@@ -34,9 +34,12 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-      <div class="horizontal-line"><div class="horizontal-line"></div></div>
-      <div class="horizontal-line2"></div>
-        <span class="navbar-toggler-icon icon-bar" id="toggler-icon-custom"></span>
+        <div class="horizontal-line"><div class="horizontal-line"></div></div>
+        <div class="horizontal-line2"></div>
+        <span
+          class="navbar-toggler-icon icon-bar"
+          id="toggler-icon-custom"
+        ></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
@@ -52,16 +55,31 @@
     <div class="container">
       <br />
       <h2>Try it out!</h2>
-        <label for="searchBox"></label>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="prepend">https://ratemyinternship.com/api/</span>
-            </div>
-            <input class="form-control" type="text" value="all/" placeholder="all/" id="searchBox" />
-            <button type="submit" id="submitButton"><i class="fa fa-search"></i></button>
+      <label for="searchBox"></label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="prepend"
+            >https://ratemyinternship.com/api/</span
+          >
         </div>
+        <input
+          class="form-control"
+          type="text"
+          value="all/"
+          placeholder="all/"
+          id="searchBox"
+        />
+        <button type="submit" id="submitButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
       <p>
-        Need a hint? Try: <a href="/all">all/</a>
+        Need a hint? Try: <a href="javascript:;" id="allExample">all/</a>,
+        <a href="javascript:;" id="locationExample"
+          >location/San%20Diego,%20CA</a
+        >
+        or
+        <a href="javascript:;" id="paytypeAnnualExample">pay_type/Annual</a>
       </p>
       <label for="response">Response:</label>
       <br />
@@ -75,7 +93,8 @@
         <div class="card-body">
           <h5 class="card-title">What is this?</h5>
           <p class="card-text">
-            Portland's greatest source for reviews on internships and the companies that host them.
+            Portland's greatest source for reviews on internships and the
+            companies that host them.
           </p>
         </div>
       </div>
