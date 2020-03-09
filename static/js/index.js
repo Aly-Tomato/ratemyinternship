@@ -34,7 +34,7 @@ $(document).ready(() => {
     });
   });
   $("#locationExample").click(() => {
-    const requestURL = "api/location/San%20Diego,%20CA";
+    const requestURL = "api/location/Portland,%20OR";
     $.ajax({
       url: requestURL,
       type: "GET",
