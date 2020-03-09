@@ -58,9 +58,12 @@ form.example::after {
 }
 
 .card-custom {
+  float: left;
   border-radius: 12px;
   background-color: RGBA(255, 255, 255, 0.1);
   height: 95%;
+  width: 30%;
+  margin-left: 15px;
 }
 
 /* #toggler-icon-custom {
