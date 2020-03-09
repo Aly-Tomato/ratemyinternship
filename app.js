@@ -33,7 +33,7 @@ app.get("/thankyou", addReview.thankyou);
 // admin routes
 app.get("/admin", admin.auth);
 app.post("/delete", admin.deleteRows);
-app.post("/thankyounext");
+app.get("/thankyounext", admin.thankyounext);
 
 // api URLs
 app.get("/api/all/:field", (req, res) => {

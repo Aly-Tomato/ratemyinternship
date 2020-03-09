@@ -24,10 +24,10 @@ body {
     border-bottom: solid #845ec2 1px;
 }
 
-#expresslink, #nodelink {
+#expresslink, #nodelink, .mylink {
     color: white;
 }
-#expresslink:hover, #nodelink:hover {
+#expresslink:hover, #nodelink:hover, .mylink:hover {
     color: #008f7a;
 }
 

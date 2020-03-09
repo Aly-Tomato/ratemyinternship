@@ -21,7 +21,7 @@ exports.deleteRows = function(req, res){
             //send notification to admins
             console.log(error.stack);
         }
-        res.redirect('/delete');
+        res.redirect('/thankyounext');
     });
 };
 
@@ -68,3 +68,6 @@ function authenticate_admin(username, password, done){
        .catch(e => console.error(e.stack));
 }
 
+exports.thankyounext = function(req, res){
+    res.sendFile('thankyounext.html', {root: 'views/'});
+};
