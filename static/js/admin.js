@@ -1,3 +1,5 @@
+// Gets the data in the searchbox and returns the dynamic routed
+// JSON object that gets produced by the server
 $(document).ready(() => {
     $('#submitButton').click(() => {
         const requestURL = 'api/' + $('#searchBox').val();
@@ -6,6 +8,7 @@ $(document).ready(() => {
             url: requestURL,
             type: 'GET',
             dataType: 'json',
+            // enters the data into the table
             success: (data) =>{
                 $('#table-body').html(generate_table(data));
             }
@@ -13,9 +16,11 @@ $(document).ready(() => {
     })
 });
 
+// creates the table that will display all the data
 function generate_table(data){
     var html;
     console.log(data);
+    // creates the table as HTML to be added into the admin.html by AJAX
     for(var i=0; i < data.length ; ++i){
        html +=
            `<tr>
@@ -37,9 +42,13 @@ function generate_table(data){
 
 
     }
+    // returns the code to be implemented in the designated area
     return html;
 }
 
+// event listener for the search box
+// checks if a user hit the enter key in the search box to 
+// trigger the search button being clicked
 var input = document.getElementById("searchBox");
 input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {

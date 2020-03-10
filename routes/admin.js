@@ -21,6 +21,7 @@ exports.deleteRows = function(req, res){
             //send notification to admins
             console.log(error.stack);
         }
+        // send the successful deletion page
         res.redirect('/thankyounext');
     });
 };

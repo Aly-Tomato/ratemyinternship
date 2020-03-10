@@ -58,11 +58,13 @@ app.get("/api/all/:field", (req, res) => {
     "company_recommend",
     "ratings_desc"
   ];
+  // it wasnt in set of fields we wanted
   if (!validFields.includes(req.params.field)) {
     res.status(500);
     res.send("Error");
     return;
   }
+  // query the database
   pool.query(
     `SELECT DISTINCT(${req.params.field}) FROM reviews`,
     (err, result) => {
@@ -70,6 +72,7 @@ app.get("/api/all/:field", (req, res) => {
         res.status(500);
         res.send("Error");
       } else {
+        // send the results
         res.status(200);
         res.send(result.rows);
       }
@@ -100,11 +103,13 @@ app.get("/api/:field/:value", (req, res) => {
     "company_recommend",
     "ratings_desc"
   ];
+  // it wasn't one of the fields
   if (!validFields.includes(req.params.field)) {
     res.status(500);
     res.send("Error");
     return;
   }
+  // query the database for search
   pool.query(
     `SELECT * FROM reviews WHERE ${req.params.field}='${req.params.value}'`,
     (err, result) => {
@@ -119,6 +124,7 @@ app.get("/api/:field/:value", (req, res) => {
   );
 });
 
+// /all query to get all the results
 app.get("/api/all", (req, res) => {
   pool.query("SELECT* FROM reviews", (err, result) => {
     if (err) {
