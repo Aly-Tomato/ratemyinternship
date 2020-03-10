@@ -4,6 +4,7 @@
   border-radius: 12px;
 }
 
+/* search bar */
 form.example input[type="text"] {
   border-radius: 12px;
   margin-top: 10px;
@@ -33,7 +34,7 @@ form.example button:hover {
   /* background: #008f7a; */
 }
 
-/* Clear floats */
+/* Clear floats after submitting */
 form.example::after {
   content: "";
   clear: both;
@@ -43,6 +44,8 @@ form.example::after {
 .container a {
   color: #845ec2;
 }
+
+/* Textarea */
 #response {
   border-radius: 12px;
   width: 100%;
@@ -51,6 +54,7 @@ form.example::after {
   border-color: grey;
 }
 
+/* Card set container */
 #container-2 {
   height: 400px;
   margin-bottom: 20px;
@@ -75,6 +79,7 @@ form.example::after {
   color: white;
 }
 
+/* Lines to get the search bar to show up */
 .horizontal-line {
   width: 33px;
   height: 26%;
@@ -82,6 +87,7 @@ form.example::after {
   position: absolute;
 }
 
+/* White line to show the search bar */
 .horizontal-line2 {
   width: 33px;
   height: 45%;
