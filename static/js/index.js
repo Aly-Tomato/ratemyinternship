@@ -26,6 +26,9 @@ $(document).ready(() => {
   $("#allExample").click(() => {
     // creates the api/all URL to route to
     const requestURL = "api/all";
+    // change the search bar to what the example executes
+    document.getElementById("searchBox").value= 'all';
+    $("#searchBox").html(requestURL);
     $.ajax({
       url: requestURL,
       type: "GET",
@@ -47,6 +50,8 @@ $(document).ready(() => {
   $("#locationExample").click(() => {
     // Make a URL request to api/location/Portland,OR
     const requestURL = "api/location/Portland,%20OR";
+    // change the search bar to what the example executes
+    document.getElementById("searchBox").value= 'location/Portland,%20OR';
     $.ajax({
       url: requestURL,
       type: "GET",
@@ -68,6 +73,8 @@ $(document).ready(() => {
   $("#paytypeAnnualExample").click(() => {
     // paytype/annual URL request change
     const requestURL = "api/pay_type/Annual";
+    // change the search bar to what the example executes
+    document.getElementById("searchBox").value= 'pay_type/Annual';
     $.ajax({
       url: requestURL,
       type: "GET",
