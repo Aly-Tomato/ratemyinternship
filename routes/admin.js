@@ -9,12 +9,17 @@ exports.deleteRows = function(req, res){
     const {Pool} = require('pg');
     const pool = new Pool();
     console.log(req.body.to_delete);
-    var query = "DELETE FROM reviews WHERE uid IN (";
-    for(var i=1; i <= req.body.to_delete.length; ++i){
-        if(i===1){query += `$${i}`;}
-        else{ query += `, $${i}`;}
+    var query="";
+    if (Array.isArray(req.body.to_delete)){
+        query = "DELETE FROM reviews WHERE uid IN (";
+        for(var i=1; i <= req.body.to_delete.length; ++i){
+            if(i===1){query += `$${i}`;}
+            else{ query += `, $${i}`;}
+        }
+        query += ')';
+    }else{
+        query = "DELETE FROM reviews WHERE uid = ${1}";
     }
-    query += ')';
 
     pool.query(query, Array.from(req.body.to_delete), (error, results) =>{
         if(error){
