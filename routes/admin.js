@@ -10,6 +10,8 @@ exports.deleteRows = function(req, res){
     const pool = new Pool();
     console.log(req.body.to_delete);
     var query="";
+    var values=Array();
+
     if (Array.isArray(req.body.to_delete)){
         query = "DELETE FROM reviews WHERE uid IN (";
         for(var i=1; i <= req.body.to_delete.length; ++i){
@@ -17,11 +19,12 @@ exports.deleteRows = function(req, res){
             else{ query += `, $${i}`;}
         }
         query += ')';
+        values = req.body.to_delete;
     }else{
-        query = "DELETE FROM reviews WHERE uid = ${1}";
+        query = "DELETE FROM reviews WHERE uid = $1";
+        values = Array.of(req.body.to_delete);
     }
-
-    pool.query(query, Array.from(req.body.to_delete), (error, results) =>{
+    pool.query(query, values, (error, results) =>{
         if(error){
             //send notification to admins
             console.log(error.stack);
