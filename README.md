@@ -15,6 +15,7 @@ reviews for various tech companies in the Portland Metro Area.
 $ git clone https://github.com/Aly-Tomato/ratemyinternship.git
 $ cd ratemyinternship
 $ npm install
+// NOTE: you will need to set postgres variables in your environment before running. Consult D2L submission for details.
 $ node app.js
 // navigate to localhost:5000 on your favorite browser
 ```
