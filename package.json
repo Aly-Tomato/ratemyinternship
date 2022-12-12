@@ -4,7 +4,7 @@
   "description": "https://anapioficeandfire.com/ and\r https://mycolor.space\r # Welcome to ratemyinternship API\r This project takes inspiration from\r https://anapioficeandfire.com/ and\r https://mycolor.space, ```ratemyinternship``` collects internship \r reviews for various tech companies in the Portland Metro Area.\r ## Usage\r ```\r $ git clone https://github.com/Aly-Tomato/ratemyinternship.git\r $ cd ratemyinternship\r $ npm install\r $ node app.js\r // navigate to localhost:5000 on your favorite browser\r ```\r ## Special Thanks! to the following libraries & tutorials\r * `expressjs` : [https://expressjs.com/](https://expressjs.com/)\r * `node-pg` : [https://node-postgres.com/](https://node-postgres.com/)\r * `passportjs` : [http://www.passportjs.org/](http://www.passportjs.org/`)\r * Lots of Google-ing!",
   "main": "app.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jsdom": "^16.2.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
